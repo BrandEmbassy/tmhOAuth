@@ -406,7 +406,7 @@ class tmhOAuth {
           // fall through to POST as PUT should be treated the same
         case 'POST':
            if ($has_payload) {
-               throw new RuntimeException("You can't use 'payload' settings together with request parameters for POST of PUT");
+               throw new RuntimeException("You can't use 'payload' settings together with request parameters for POST or PUT");
            }
           $this->request_settings['postfields'] = $this->request_settings['multipart'] ? $prepared : $content;
           break;
